@@ -1,0 +1,34 @@
+signature_source:
+  type: enum
+  default: custom user field
+  choices:
+    - custom user field
+    - global signature
+  description: 
+    en: 'Select the source of the signatures. See the two settings below for comparison.'
+custom_user_field_number:
+  type: string
+  default: ''
+  description:
+    en: 'With this option, each staff user can add their own signature through 
+        their profile in the "signature" field. Setup instructions below:
+        <ol>
+          <li>
+            Create a custom user field <a href="/admin/customize/user_fields">here</a> called "signature" and
+            leave all options below the <b>Field Description</b> unchecked. Find <code>"name":"signature"</code> 
+            in the code <a href="/admin/customize/user_fields.json">here</a> and note the "id" number that appears
+            before it.
+          </li>
+          <li>
+            Add <code>user_field_X</code> to your <a href="/admin/site_settings/category/all_results?filter=public_user">
+            public user custom fields</a> site setting, where X is the id number you noted in the last step.
+          </li>
+          <li>
+            Add the id number to this setting and save the change.
+          </li>
+        </ol>'
+global_signature:
+  type: string
+  default: ''
+  description:
+    en: 'HTML that will display under <b>all</b> admin and moderator posts'
